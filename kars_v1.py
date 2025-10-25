@@ -16,12 +16,15 @@ client = openai.Client(
 )
 
 st.title("Krazy Audio Revision Software")
+st.write("A speaking solution for the hard of hearing and speech impaired. Building off of Boson AI's Audio processing software, the Krazy Audio Revision Software (KARS) aids the deaf and hard of hearning in learning to speak by listening to users, giving speaking practice, and providing feedback on pronunciation in a visual format.")
 
+st.subheader("Input")
 # Enter a phrase user is trying to say
 prompt = st.text_input("Enter a phrase you want advice for:")
 
 # Record audio from microphone
-audio_data = st.audio_input("Record yourself saying the phrase:")
+if prompt is not None:
+    audio_data = st.audio_input("Record yourself saying the phrase:")
 
 # Check if the user recorded something
 if audio_data is not None:
@@ -33,6 +36,8 @@ if audio_data is not None:
         f.write(audio_data.getvalue())
 
     st.success("✅ Audio saved as recording.wav")
+
+# st.write("Processing input...")
 
 if audio_data is not None:
     # Save to file
@@ -100,3 +105,5 @@ if audio_data is not None:
     )
 
     print(response.choices[0].message.content)
+    st.subheader("Advice")
+    st.write(response.choices[0].message.content)
