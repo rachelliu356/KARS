@@ -15,10 +15,13 @@ client = openai.Client(
     base_url="https://hackathon.boson.ai/v1"
 )
 
-st.title("🎙️ Streamlit Audio Recorder Example")
+st.title("Krazy Audio Revision Software")
+
+# Enter a phrase user is trying to say
+prompt = st.text_input("Enter a phrase you want advice for:")
 
 # Record audio from microphone
-audio_data = st.audio_input("Record your voice:")
+audio_data = st.audio_input("Record yourself saying the phrase:")
 
 # Check if the user recorded something
 if audio_data is not None:
@@ -63,7 +66,7 @@ if audio_data is not None:
     )
 
     transcription = response.choices[0].message.content
-    st.subheader("📝 Transcription")
+    st.subheader("Transcription")
     st.write(transcription)
 
     # Chat about the audio
@@ -74,7 +77,7 @@ if audio_data is not None:
     response = client.chat.completions.create(
         model="higgs-audio-understanding-Hackathon",
         messages=[
-            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "system", "content": "You are a speech therapist."},
             {
                 "role": "user",
                 "content": [
@@ -89,7 +92,7 @@ if audio_data is not None:
             },
             {
                 "role": "user",
-                "content": "compare this to a typical american accent. what ways should the pronounciation be changed to match the accent?",
+                "content": "Compare the user's recording to the proper american pronunciation of '"+prompt+"' and give advice on how to make the pronounciation closer. Be conscise, only focus on the worst words, and give specicific advice on mouth movements",
             },
         ],
         max_completion_tokens=256,
