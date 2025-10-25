@@ -9,27 +9,34 @@ Installation Instructions:
 - Libraries/dependencies
 	- streamlit
 	- openai
-  - os
-  - base64
+	- os
+	- base64
  
 Create virtual environment:
-- run the following code in order in the terminal of your code folder:
-      python -m venv my_env
-      ./my_env/Scripts/activate
+Run the following code in order in the terminal of your code folder:
+```
+python -m venv my_env
+./my_env/Scripts/activate
+```
 
 Run the following code in the terminal in the virtual environment to install the required libraries:
-      pip install streamlit
-      pip install openai
-      pip install os
-      pip install base64
+```  
+pip install streamlit
+pip install openai
+pip install os
+pip install base64
+```
 
 Run in terminal to activate the virtual environment:
-      ./my_env/Scripts/activate
+```
+./my_env/Scripts/activate
+```
 
 To run program, run in terminal:
-      streamlit run kars_v1.py
-To stop running program, type in terminal:
-      ctrl+C
+```
+streamlit run kars_v1.py
+```
+To stop running program, type CTRL+C in terminal.
 
 
       
