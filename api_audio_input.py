@@ -10,7 +10,7 @@ def encode_audio_to_base64(file_path: str) -> str:
         return base64.b64encode(audio_file.read()).decode("utf-8")
 
 client = openai.Client(
-    api_key="bai-gpr3RDJ208hq6QGZQ6RUt6N_kqHJ7aggUCwQAn2Hf50RvokU",
+    api_key=BOSON_API_KEY,
     base_url="https://hackathon.boson.ai/v1"
 )
 
@@ -69,5 +69,6 @@ response = client.chat.completions.create(
     max_completion_tokens=256,
     temperature=0.8,
 )
+
 
 print(response.choices[0].message.content)
