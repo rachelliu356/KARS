@@ -1,6 +1,6 @@
 # KARS
-A speaking solution for the hard of hearing and speech impaired.
-Building off of Boson AI's Audio processing software, this program aids the deaf and hard of hearning in learning to speak by listening to users, giving speaking practice, and providing feedback on pronunciation in
+Your own virtual speech coach.
+Building off of Boson AI's Audio processing software, this program aids the deaf, hard of hearning, or anyone learning a new language in learning to speak by listening to users, giving speaking practice, and providing feedback on pronunciation in
 a visual format. (maybe teach ipa?)
 
 Installation Instructions:
@@ -34,7 +34,7 @@ Run in terminal to activate the virtual environment:
 
 To run program, run in terminal:
 ```
-streamlit run kars_v1.py
+streamlit run kars_v3.py
 ```
 To stop running program, type CTRL+C in terminal.
 
