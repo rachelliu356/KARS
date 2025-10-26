@@ -12,7 +12,7 @@ def encode_audio_to_base64(file_path: str) -> str:
         return base64.b64encode(audio_file.read()).decode("utf-8")
 
 client = openai.Client(
-    api_key="bai-bPL6u0Zj4AdyiwwS0rTxbIS5lRF00i4XG7TO6bqSYtQwFbsD",
+    api_key=BOSON_API_KEY,
     base_url="https://hackathon.boson.ai/v1"
 )
 
@@ -153,4 +153,5 @@ if response_text:
     KARS_response(response_text, st.session_state.i)
     prompt = st.text_input("Enter a phrase you want advice for:")
     st.session_state.i +=1
+
     response_text = user_input(prompt, st.session_state.i)
