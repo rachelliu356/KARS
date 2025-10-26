@@ -1,4 +1,6 @@
 import os, openai, base64
+
+BOSON_API_KEY = os.getenv("BOSON_API_KEY")
 client = openai.Client(api_key=BOSON_API_KEY,
                        base_url="https://hackathon.boson.ai/v1")
 
@@ -27,3 +29,4 @@ resp = client.chat.completions.create(
 )
 
 print(resp.choices[0].message.content)
+
