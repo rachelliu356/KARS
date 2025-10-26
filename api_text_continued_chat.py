@@ -4,7 +4,7 @@ import os
 BOSON_API_KEY = os.getenv("BOSON_API_KEY")
 
 client = openai.OpenAI(
-    api_key="bai-gpr3RDJ208hq6QGZQ6RUt6N_kqHJ7aggUCwQAn2Hf50RvokU",
+    api_key=BOSON_API_KEY,
     base_url="https://hackathon.boson.ai/v1"
 )
 messages=[
@@ -32,4 +32,5 @@ while True:
 
     reply = response.choices[0].message.content
     print(f"assistant's reply: {reply}\n")
+
     messages.append({"role" : "system", "content" : reply})
