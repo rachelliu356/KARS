@@ -11,7 +11,7 @@ def encode_audio_to_base64(file_path: str) -> str:
         return base64.b64encode(audio_file.read()).decode("utf-8")
 
 client = openai.Client(
-    api_key="bai-bPL6u0Zj4AdyiwwS0rTxbIS5lRF00i4XG7TO6bqSYtQwFbsD",
+    api_key=BOSON_API_KEY,
     base_url="https://hackathon.boson.ai/v1"
 )
 
@@ -111,4 +111,5 @@ response = give_feedback(audio_data, prompt)
 
 print(response.choices[0].message.content)
 st.subheader("Advice")
+
 st.write(response.choices[0].message.content)
