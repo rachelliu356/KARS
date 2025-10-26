@@ -1,5 +1,5 @@
 import os, openai, base64
-client = openai.Client(api_key="bai-gpr3RDJ208hq6QGZQ6RUt6N_kqHJ7aggUCwQAn2Hf50RvokU",
+client = openai.Client(api_key=BOSON_API_KEY,
                        base_url="https://hackathon.boson.ai/v1")
 
 def encode_audio_to_base64(file_path: str) -> str:
@@ -25,4 +25,5 @@ resp = client.chat.completions.create(
     max_tokens=256,
     temperature=0.2,
 )
+
 print(resp.choices[0].message.content)
